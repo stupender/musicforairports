@@ -73,25 +73,25 @@ function getSample(instrument, noteAndOctave) {
   }));
 }
 
-function playSample(instrument, note) {
-  getSample(instrument, note).then(({audioBuffer, distance}) => {
-    let playbackRate = Math.pow(2, distance / 12);
-    let bufferSource = audioContext.createBufferSource();
-    bufferSource.buffer = audioBuffer;
-    bufferSource.playbackRate.value = playbackRate;
-    bufferSource.connect(audioContext.destination);
-    bufferSource.start();
-  });
-}
+function playSample(instrument, note, delaySeconds = 0) {
+    getSample(instrument, note).then(({audioBuffer, distance}) => {
+      let playbackRate = Math.pow(2, distance / 12);
+      let bufferSource = audioContext.createBufferSource();
+      bufferSource.buffer = audioBuffer;
+      bufferSource.playbackRate.value = playbackRate;
+      bufferSource.connect(audioContext.destination);
+      bufferSource.start(audioContext.currentTime + delaySeconds);
+    });
+  }
 
 // Temporary test code
-setTimeout(() => playSample('Guitar', 'B2'),  1000);
-setTimeout(() => playSample('Guitar', 'D3'), 2000);
-setTimeout(() => playSample('Guitar', 'F#3'),  3000);
-setTimeout(() => playSample('Guitar', 'G3'), 4000);
-setTimeout(() => playSample('Guitar', 'A3'), 5000);
-setTimeout(() => playSample('Guitar', 'B3'),  6000);
-setTimeout(() => playSample('Guitar', 'D4'), 7000);
+// setTimeout(() => playSample('Guitar', 'B2'),  1000);
+// setTimeout(() => playSample('Guitar', 'D3'), 2000);
+// setTimeout(() => playSample('Guitar', 'F#3'),  3000);
+// setTimeout(() => playSample('Guitar', 'G3'), 4000);
+// setTimeout(() => playSample('Guitar', 'A3'), 5000);
+// setTimeout(() => playSample('Guitar', 'B3'),  6000);
+// setTimeout(() => playSample('Guitar', 'D4'), 7000);
 
 // setTimeout(() => playSample('Sax', 'B2'),  1000);
 // setTimeout(() => playSample('Sax', 'D3'), 2000);
@@ -101,3 +101,19 @@ setTimeout(() => playSample('Guitar', 'D4'), 7000);
 // setTimeout(() => playSample('Sax', 'B3'),  6000);
 // setTimeout(() => playSample('Sax', 'D4'), 7000);
 
+
+function startLoop(instrument, note, loopLengthSeconds, delaySeconds) {
+    playSample(instrument, note, delaySeconds);
+    setInterval(
+      () => playSample(instrument, note, delaySeconds),
+      loopLengthSeconds * 1000
+    );
+  }
+  
+  startLoop('Guitar', 'F3', 5, 4.0);
+  startLoop('Guitar', 'Ab3', 5.5, 8.1);
+  startLoop('Guitar', 'C4', 2, 5.6);
+  startLoop('Guitar', 'Db4', 1, 12.6);
+  startLoop('Guitar', 'Eb4', 4.6, 9.2);
+  startLoop('Guitar', 'F4', 5.3, 14.1);
+  startLoop('Guitar', 'Ab4', 10.1, 3.1);  
