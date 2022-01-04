@@ -15,12 +15,12 @@ body {
 
 button {
     display: block;
-    color: #0a0e0a;
+    color: #a7b7b9;
     font-family: futura;
     font-size: 25px;
     font-style: italic;
     background-color: #242424b6;
-    background: radial-gradient(circle, rgb(112 145 33) 0%, rgb(3 14 0) 100%);    
+    background: radial-gradient(circle, #0f160b 0%, rgb(3 14 0) 100%);    
     background-blend-mode: soft-light;
     border: none;
     height: 200px;

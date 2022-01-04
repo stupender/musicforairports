@@ -27,6 +27,9 @@ let SAMPLE_LIBRARY = {
     'Eno & Fripp': [
       { note: 'F#',  octave: 2, file: 'Samples/Eno & Fripp/F#2.wav' },
       { note: 'C#',  octave: 3, file: 'Samples/Eno & Fripp/C#3.wav' },
+    ],
+    'Field Recordings': [
+      { note: 'C',  octave: 4, file: 'Samples/Field Recordings/Accord.wav' },
     ]
 };
 
@@ -140,6 +143,9 @@ let playedOnce = false;
               // Eno & Fripp Low Padded Chords
               startLoop('Eno & Fripp', 'C#3', 30, 15.1);  
               startLoop('Eno & Fripp', 'F#2', 30, 25.1);
+
+              // startLoop('Field Recordings', 'C4', 60, 0.0);
+
 
               playedOnce = true;
     }
