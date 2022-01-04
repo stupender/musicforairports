@@ -4,7 +4,9 @@ body {
     background-size: cover;
     background-position: top;
     background-blend-mode: soft-light;
+    background-size: auto 100vh;
 }
+
 button {
     display: block;
     color: #0a0e0a;
