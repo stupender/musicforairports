@@ -121,10 +121,13 @@ function startLoop(instrument, note, loopLengthSeconds, delaySeconds) {
     );
   }
 
-
+let playedOnce = false;
 // EVENT LISTENER
   let button = document.querySelector('button');
   button.addEventListener('click', function() {
+    if(playedOnce == true) {
+      return;
+    } else {
               // Guitar Flute Sounds
               startLoop('Guitar Sustain', 'F4', 11.1, 0.0);
               startLoop('Guitar Sustain', 'Ab4', 10, 3.1);
@@ -136,7 +139,10 @@ function startLoop(instrument, note, loopLengthSeconds, delaySeconds) {
         
               // Eno & Fripp Low Padded Chords
               startLoop('Eno & Fripp', 'C#3', 30, 15.1);  
-              startLoop('Eno & Fripp', 'F#2', 30, 25.1);  
+              startLoop('Eno & Fripp', 'F#2', 30, 25.1);
+
+              playedOnce = true;
+    }
   });
   
 

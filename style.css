@@ -1,9 +1,10 @@
 html {
     height: 0;
+    background-color: #060a06;
 }
 
 body {
-    background-color: #242424;
+    background-color: #242424b6;
     background-image: url("images/leaves.jpg");
     background-position: top;
     background-blend-mode: soft-light;
@@ -18,8 +19,9 @@ button {
     font-family: futura;
     font-size: 25px;
     font-style: italic;
-    /* background-color: rgb(116,173,116); */
-    background: radial-gradient(circle, rgb(38 65 11) 0%, rgb(19, 31, 7) 100%);    
+    background-color: #242424b6;
+    background: radial-gradient(circle, rgb(112 145 33) 0%, rgb(3 14 0) 100%);    
+    background-blend-mode: soft-light;
     border: none;
     height: 200px;
     width: 200px;
@@ -32,3 +34,16 @@ button {
     transform: translate(-50%, -50%);
 }
 
+
+p {
+    text-align: center;
+    color: #a7b7b9;
+    position: absolute;
+    padding: 10px 10px;
+    top: 78%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: futura;
+    font-style: italic;
+}
