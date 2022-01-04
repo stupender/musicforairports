@@ -120,14 +120,40 @@ function startLoop(instrument, note, loopLengthSeconds, delaySeconds) {
       loopLengthSeconds * 1000
     );
   }
-  
-  startLoop('Guitar Sustain', 'F4', 16, 0.0);
-  startLoop('Guitar Sustain', 'Ab4', 16, 8.1);
-  startLoop('Guitar Sustain', 'C5', 16, 5.6);
-  startLoop('Guitar Sustain', 'Db5', 16, 12.6);
-  startLoop('Guitar Sustain', 'Eb5', 16, 9.2);
-  startLoop('Guitar Sustain', 'F5', 16, 14.1);
-  startLoop('Guitar Sustain', 'Ab5', 16, 3.1);  
 
-  startLoop('Eno & Fripp', 'C#3', 16, 15.1);  
-  startLoop('Eno & Fripp', 'F#2', 16, 25.1);  
+
+// EVENT LISTENER
+  let button = document.querySelector('button');
+  button.addEventListener('click', function() {
+              // Guitar Flute Sounds
+              startLoop('Guitar Sustain', 'F4', 11.1, 0.0);
+              startLoop('Guitar Sustain', 'Ab4', 10, 3.1);
+              startLoop('Guitar Sustain', 'C5', 12.1, 5.6);
+              startLoop('Guitar Sustain', 'Db5', 15.5, 9.6);
+              startLoop('Guitar Sustain', 'Eb5', 17.3, 10.2);
+              startLoop('Guitar Sustain', 'F5', 18.6, 11.1);
+              startLoop('Guitar Sustain', 'Ab5', 23.1, 14.1);  
+        
+              // Eno & Fripp Low Padded Chords
+              startLoop('Eno & Fripp', 'C#3', 30, 15.1);  
+              startLoop('Eno & Fripp', 'F#2', 30, 25.1);  
+  });
+  
+
+// PLAY/PAUSE
+audioContext.suspend().then(function() {
+  button.textContent = 'Play';
+});
+
+button.onclick = function() {
+  if(audioContext.state === 'running') {
+    audioContext.suspend().then(function() {
+      button.textContent = 'Play';
+    });
+  } else if(audioContext.state === 'suspended') {
+    audioContext.resume().then(function() {
+      button.textContent = 'Pause';
+    });
+  }
+}
+  

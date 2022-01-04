@@ -1,0 +1,27 @@
+body {
+    background-color: #242424;
+    background-image: url("images/leaves.JPG");
+    background-size: cover;
+    background-position: top;
+    background-blend-mode: soft-light;
+}
+button {
+    display: block;
+    color: #0a0e0a;
+    font-family: futura;
+    font-size: 25px;
+    font-style: italic;
+    /* background-color: rgb(116,173,116); */
+    background: radial-gradient(circle, rgb(38 65 11) 0%, rgb(19, 31, 7) 100%);    
+    border: none;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    /* CENTER IN VIEWPORT */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
