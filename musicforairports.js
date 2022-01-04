@@ -15,7 +15,18 @@ let SAMPLE_LIBRARY = {
         { note: 'G',  octave: 3, file: 'Samples/Guitar/G3.mp3' },
         { note: 'A',  octave: 3, file: 'Samples/Guitar/A3.mp3' },
         { note: 'B',  octave: 3, file: 'Samples/Guitar/B3.mp3' },
-        { note: 'D',  octave: 4, file: 'Samples/Guitar/D4.mp3' },
+        { note: 'D',  octave: 4, file: 'Samples/Guitar/D4.mp3' }
+    ],
+    'Guitar Sustain': [
+      { note: 'A',  octave: 4, file: 'Samples/Guitar Sustain/A4.wav' },
+      { note: 'C#',  octave: 5, file: 'Samples/Guitar Sustain/C#5.wav' },
+      { note: 'E',  octave: 5, file: 'Samples/Guitar Sustain/E5.wav' },
+      { note: 'G#',  octave: 5, file: 'Samples/Guitar Sustain/G#5.wav' },
+      { note: 'A',  octave: 5, file: 'Samples/Guitar Sustain/A5.wav' }
+    ],
+    'Eno & Fripp': [
+      { note: 'F#',  octave: 2, file: 'Samples/Eno & Fripp/F#2.wav' },
+      { note: 'C#',  octave: 3, file: 'Samples/Eno & Fripp/C#3.wav' },
     ]
 };
 
@@ -110,10 +121,13 @@ function startLoop(instrument, note, loopLengthSeconds, delaySeconds) {
     );
   }
   
-  startLoop('Guitar', 'F3', 5, 4.0);
-  startLoop('Guitar', 'Ab3', 5.5, 8.1);
-  startLoop('Guitar', 'C4', 2, 5.6);
-  startLoop('Guitar', 'Db4', 1, 12.6);
-  startLoop('Guitar', 'Eb4', 4.6, 9.2);
-  startLoop('Guitar', 'F4', 5.3, 14.1);
-  startLoop('Guitar', 'Ab4', 10.1, 3.1);  
+  startLoop('Guitar Sustain', 'F4', 16, 0.0);
+  startLoop('Guitar Sustain', 'Ab4', 16, 8.1);
+  startLoop('Guitar Sustain', 'C5', 16, 5.6);
+  startLoop('Guitar Sustain', 'Db5', 16, 12.6);
+  startLoop('Guitar Sustain', 'Eb5', 16, 9.2);
+  startLoop('Guitar Sustain', 'F5', 16, 14.1);
+  startLoop('Guitar Sustain', 'Ab5', 16, 3.1);  
+
+  startLoop('Eno & Fripp', 'C#3', 16, 15.1);  
+  startLoop('Eno & Fripp', 'F#2', 16, 25.1);  
